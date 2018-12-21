@@ -41,19 +41,17 @@ void Player::die(deathReason currentDeathReason)
         }
         break;
     case lynch:
-        /*todo: foreach Headhunter where target == currentPlayer {win}*/
-        //if (role == fool) {Game.win(fool)} //fool not implemented
-        break;
+        //if (role == fool) {Game.win(fool) and break; to not kill the fool} //fool not implemented
+        //todo: foreach Headhunter where target == currentPlayer {win}
+        //don't break at end, otherwise Headhunter target will not die
     default:
+        alive = false; //actually kill player
+        //todo: display grave to all clients
         break;
     }
 
     if (role == sectLeader)
     {/*todo: kill each player with sectMember == true*/}
-
-    alive = false; //actually kill player
-
-    //todo: display grave to all clients
 
     if (myGame.getRevealRolesAfterDeath()){
         /*todo: reveal players role*/
