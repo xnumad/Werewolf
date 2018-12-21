@@ -2,7 +2,7 @@
 
 Player::Player()
 {
-
+    player = new Player;
 }
 
 Player::Player(enum role RoleIn)
@@ -112,3 +112,13 @@ void Player::setRole(const enum role &value)
 {
     role = value;
 }
+Player *Player::getVotesFor() const
+{
+    return votesFor;
+}
+
+void Player::setVotesFor(Player *value)
+{
+    votesFor = value;
+}
+

@@ -62,6 +62,9 @@ public:
     role getRole() const;
     void setRole(const role &value);
 
+    Player *getVotesFor() const;
+    void setVotesFor(Player *value);
+
 private:
     bool alive;
     bool sectMember;
@@ -70,6 +73,7 @@ private:
     bool jailed;
     role role;
     Player *votesFor;
+    Player *player;
 };
 
 #endif // PLAYER_H

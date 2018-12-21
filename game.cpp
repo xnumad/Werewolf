@@ -1,4 +1,5 @@
 #include "game.h"
+#include "player.h"
 
 Game::Game()
 {
@@ -12,6 +13,7 @@ void Game::dayBegin()
 {
     daytime = day;
     //foreach Player votesFor = 0
+    foreach(Player *player in Player)
     //set canAdd = true for all sectLeaders
 
     //set canEnchant = true for all shamans
@@ -84,4 +86,12 @@ void Game::setDaytime(const enum daytime &value)
 int Game::getGunnerShots() const
 {
     return gunnerShots;
+}
+
+void Game::setup()
+{
+    Rplayer[16];
+    foreach (*Player, Rplayer) {
+
+    }
 }

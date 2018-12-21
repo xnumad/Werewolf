@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
+class Player{};
 class Game
 {
 public:
@@ -29,12 +30,15 @@ public:
     void setDaytime(const daytime &value);
 
     int getGunnerShots() const;
+    void setup();
 
 private:
     daytime daytime;
     int dayDiscussionTime,dayVotingTime,nightTime,nightCount;
     bool revealRolesAfterDeath, highlightBadVoters;
     int gunnerShots;
+    int playercount,maxplayercount;
+    Player *Rplayer[];
 };
 
 #endif // GAME_H
