@@ -10,11 +10,11 @@ Player::Player(enum role RoleIn)
     role = RoleIn;
 }
 
-void Player::vote(Player *playerID) //must be called with "&playerID" as parameter //https://stackoverflow.com/a/1896395
+void Player::vote(Player *playerID) //must be called with "&playerID" as parameter if not a pointer //https://stackoverflow.com/a/1896395
 {
     if (validAction(playerID))
     {
-        if ((myGame.getDaytime() == Game::night && playerID->determineAura() != bad) /*to prevent werewolfs from voting each other at night*/ || myGame.getDaytime() == Game::day)
+        if ((myGame.getDaytime() == Game::night && playerID->determineAura() != bad) || myGame.getDaytime() == Game::day) //Aura check to prevent werewolfes from voting each other (bad aura) at night
         {
             votesFor = playerID; //set attribute to vote for another player
         }
