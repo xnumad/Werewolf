@@ -1,5 +1,5 @@
 #include "game.h"
-#include "player.h"
+#include "player.h" //do not include in game.h because player.h already includes game.h
 
 Game::Game()
 {
