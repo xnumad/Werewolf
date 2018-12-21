@@ -2,7 +2,7 @@
 
 Player::Player()
 {
-    player = new Player;
+
 }
 
 Player::Player(enum role RoleIn)

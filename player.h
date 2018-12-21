@@ -73,7 +73,6 @@ private:
     bool jailed;
     role role;
     Player *votesFor;
-    Player *player;
 };
 
 #endif // PLAYER_H
