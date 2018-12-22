@@ -7,7 +7,7 @@ Gunner::Gunner()
 
 void Gunner::shoot(Player *playerID)
 {
-    if (validAction(playerID) && shots > 0)
+    if (myGame.getDaytime() == Game::day && validAction(playerID) && shots > 0)
     {
         playerID->die(other); //Kill option
     }

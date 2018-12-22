@@ -6,7 +6,7 @@ Witch::Witch()
 
 void Witch::use(Witch::potion, Player *playerID)
 {
-    if (validAction(playerID))
+    if (myGame.getDaytime() == Game::night && validAction(playerID))
     {
         //check if protected first?
         switch (Witch::witchPotion)

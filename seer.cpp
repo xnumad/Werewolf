@@ -6,7 +6,7 @@ Seer::Seer()
 
 void Seer::check(Player *playerID)
 {
-    if (validAction(playerID))
+    if (myGame.getDaytime() == Game::night && validAction(playerID))
     {
         switch (getRole())
         {

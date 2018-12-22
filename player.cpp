@@ -5,9 +5,9 @@ Player::Player()
 
 }
 
-Player::Player(enum role RoleIn)
+Player::Player(enum role role)
 {
-    role = RoleIn;
+    this->role = role;
 }
 
 void Player::vote(Player *playerID) //must be called with "&playerID" as parameter if not a pointer //https://stackoverflow.com/a/1896395

@@ -6,7 +6,7 @@ Shaman::Shaman()
 
 void Shaman::enchant(Player *playerID)
 {
-    if (validAction(playerID) && canEnchant) //prevent abuse by verifying that enchanting ability hasn't already been used this day
+    if (myGame.getDaytime() == Game::day && validAction(playerID) && canEnchant) //prevent abuse by verifying that enchanting ability hasn't already been used this day
     {
         playerID->setEnchanted(true);
         canEnchant = false; //disable ability to enchant (will be restored by dayBegin() in Game class every new day) //reference to sectLeader class's addMember method

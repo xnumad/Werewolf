@@ -33,7 +33,7 @@ public:
     };
 
     Player();
-    Player(role);
+    Player(role role);
 
     void vote(Player *playerID);
 

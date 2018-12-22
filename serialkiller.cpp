@@ -6,7 +6,7 @@ SerialKiller::SerialKiller()
 
 void SerialKiller::kill(Player *playerID) //same method as deathPotion of witch
 {
-    if (validAction(playerID))
+    if (myGame.getDaytime() == Game::night && validAction(playerID))
     {
         //check if protected first?
         playerID->die(other);

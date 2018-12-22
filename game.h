@@ -37,7 +37,6 @@ private:
     bool revealRolesAfterDeath, highlightBadVoters;
     int gunnerShots;
     int playercount,maxplayercount;
-    Player *Rplayer[];
 };
 
 #endif // GAME_H

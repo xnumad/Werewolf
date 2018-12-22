@@ -6,12 +6,15 @@ Priest::Priest()
 
 void Priest::holyWater(Player *playerID)
 {
-    if (playerID->determineAura() == bad)
+    if (myGame.getDaytime() == Game::day)
     {
-        playerID->die(other); //blessed player dies //Kill option
-    }
-    else
-    {
-        die(other); //priest dies //Kill option
+        if (playerID->determineAura() == bad)
+        {
+            playerID->die(other); //blessed player dies //Kill option
+        }
+        else
+        {
+            die(other); //priest dies //Kill option
+        }
     }
 }

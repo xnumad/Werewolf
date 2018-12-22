@@ -13,7 +13,7 @@ void Game::dayBegin()
 {
     daytime = day;
     //foreach Player votesFor = 0
-    foreach(Player *player in Player)
+    //foreach(Player *player in Player)
     //set canAdd = true for all sectLeaders
 
     //set canEnchant = true for all shamans
@@ -90,8 +90,5 @@ int Game::getGunnerShots() const
 
 void Game::setup()
 {
-    Rplayer[16];
-    foreach (*Player, Rplayer) {
-
-    }
+//    foreach (*Player, Rplayer) {
 }
