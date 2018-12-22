@@ -11,7 +11,7 @@ public:
 
 private:
     bool shield;
-    //Player *protects; //pointer for the playerID he protects
+    Player *protects; //pointer for the playerID he protects
 };
 
 #endif // BODYGUARD_H

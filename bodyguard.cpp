@@ -7,5 +7,8 @@ Bodyguard::Bodyguard()
 
 void Bodyguard::protect(Player *playerID)
 {
-
+    if (myGame.getDaytime() == Game::night && validAction(playerID))
+    {
+        protects = playerID;
+    }
 }
