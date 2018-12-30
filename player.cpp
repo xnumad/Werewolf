@@ -78,7 +78,15 @@ Player::aura Player::determineAura()
 
 bool Player::validAction(Player *playerID) //Checks if an action makes sense and therefore can be considered valid
 {
-    return (alive && playerID->alive && (playerID != this)); //3 conditions: BOTH sender and target are alive (as Medium is a role with the ability to revive dead players, it doesn't call this method) and sender is not the same player as target
+    //conditions:
+    //1&2. BOTH sender and target are alive
+    //  3. sender is not the same player as target
+
+    if (role == medium && myGame.getDaytime() == Game::night) //Medium exception: can revive dead players at night
+    {
+        return (alive && (playerID != this));
+    }
+    return (alive && playerID->alive && (playerID != this));
 }
 
 bool Player::getSectMember() const
