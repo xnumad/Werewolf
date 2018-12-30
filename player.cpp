@@ -53,6 +53,9 @@ void Player::die(deathReason currentDeathReason)
     if (role == sectLeader)
     {/*todo: kill each player with sectMember == true*/}
 
+    if (role == jailer)
+    {/*todo: set for each player jailed = false*/}
+
     if (myGame.getRevealRolesAfterDeath()){
         /*todo: reveal players role*/
     }

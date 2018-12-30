@@ -12,7 +12,7 @@ Game::Game()
 void Game::dayBegin()
 {
     daytime = day;
-    //foreach Player votesFor = 0
+    //foreach Player votesFor = 0 && jailed = false
     //foreach(Player *player in Player)
     //set canAdd = true for all sectLeaders
 
