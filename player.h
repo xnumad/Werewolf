@@ -37,8 +37,6 @@ public:
 
     void vote(Player *playerID);
 
-    //->
-
     enum aura{good,bad,unknown};
 
     enum deathReason{suicide,lynch,wolfVote,other};
@@ -60,7 +58,7 @@ public:
     Game myGame; //current game instance
 
     role getRole() const;
-    void setRole(const role &value);
+    void setRole(const role &role);
 
     Player *getVotesFor() const;
     void setVotesFor(Player *value);

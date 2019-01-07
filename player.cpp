@@ -117,9 +117,9 @@ enum Player::role Player::getRole() const
     return role;
 }
 
-void Player::setRole(const enum role &value)
+void Player::setRole(const enum role &role)
 {
-    role = value;
+    this->role = role;
 }
 Player *Player::getVotesFor() const
 {
