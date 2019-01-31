@@ -29,8 +29,6 @@ void Player::vote(Player *playerID) //must be called with "&playerID" as paramet
 
 void Player::die(deathReason currentDeathReason)
 {
-    /*todo: foreach Player where protects == currentPlayer {don't die}*/
-
     switch(currentDeathReason)
     {
     case wolfVote:

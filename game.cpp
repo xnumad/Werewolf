@@ -20,12 +20,17 @@ void Game::dayBegin()
     //if (serialKiller->alive) {
     ////check if protected first
     //serialKiller->getKills()->die(other)} //Kill option
-    if (witch->alive) {
-        switch (witch->getCurrentPotion()) {
-        case deathPotion:
-        }
-    witch->getTarget()->die(other);
-    }
+
+    //if (witch->alive) {
+    //    switch (witch->getCurrentPotion()) {
+    //    case deathPotion:
+    //        witch->getTarget()->die(other);
+    //        break;
+    //    case shieldPotion:
+    //
+    //        break;
+    //    }
+    //}
 }
 
 void Game::nightbegin() //will be executed from first night and on
