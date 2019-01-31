@@ -12,8 +12,14 @@ public:
 
     void use(enum potion potion, Player *playerID);
 
+    Player *getTarget() const;
+
+    potion getCurrentPotion() const;
+
 private:
     bool potionAvailable[2];
+    Player *target;
+    potion currentPotion;
 };
 
 #endif // WITCH_H

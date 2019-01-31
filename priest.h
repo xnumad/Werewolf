@@ -9,6 +9,8 @@ public:
     Priest();
     void holyWater(Player *playerID);
 
+    void setWater(bool value);
+
 private:
     bool water;
 };

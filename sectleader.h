@@ -9,10 +9,8 @@ public:
     SectLeader();
     void addMember(Player *playerID);
 
-    void setCanAdd(bool value);
-
 private:
-    bool canAdd;
+    Player *adds;
 };
 
 #endif // SECTLEADER_H

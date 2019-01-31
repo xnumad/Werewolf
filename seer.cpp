@@ -2,6 +2,7 @@
 
 Seer::Seer()
 {
+    canCheck = true;
 }
 
 void Seer::check(Player *playerID)
@@ -31,11 +32,21 @@ void Seer::check(Player *playerID)
             }
             break;
         case wolfSeer:
+            if (playerID->determineAura() == bad)
+            {
+                return;
+            }
             //overlay (target, target.role);
             //todo: Automatically display in wolf chat the role of the player checked by the wolf seer
             break;
         default: //all other cases
             break; //do nothing
         }
+        canCheck = false;
     }
+}
+
+void Seer::setCanCheck(bool value)
+{
+    canCheck = value;
 }

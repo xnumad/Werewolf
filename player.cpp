@@ -14,15 +14,16 @@ void Player::vote(Player *playerID) //must be called with "&playerID" as paramet
 {
     if (validAction(playerID))
     {
+        if (myGame.getDaytime() == Game::night && role == wolfSeer)
+        {
+            //can't vote except he gave up his ability to see roles
+        }
+
         if ((myGame.getDaytime() == Game::night && playerID->determineAura() != bad) || myGame.getDaytime() == Game::day) //Aura check to prevent werewolfes from voting each other (bad aura) at night
         {
             votesFor = playerID; //set attribute to vote for another player
         }
 
-        if (myGame.getDaytime() == Game::night && role == wolfSeer)
-        {
-            //can't vote except he gave up his ability to see roles
-        }
     }
 }
 
@@ -68,12 +69,10 @@ Player::aura Player::determineAura()
     case wolfSeer:
     case shaman:
         return bad;
-        break;
     case villager:
     case seer:
     case auraSeer:
         return good;
-        break;
     default:
         return unknown;
     }
@@ -84,12 +83,13 @@ bool Player::validAction(Player *playerID) //Checks if an action makes sense and
     //conditions:
     //1&2. BOTH sender and target are alive
     //  3. sender is not the same player as target
+    //  4. jailed == false
 
     if (role == medium && myGame.getDaytime() == Game::night) //Medium exception: can revive dead players at night
     {
-        return (alive && (playerID != this));
+        return (alive && (playerID != this) && jailed == false);
     }
-    return (alive && playerID->alive && (playerID != this));
+    return (alive && playerID->alive && (playerID != this) && jailed == false);
 }
 
 bool Player::getSectMember() const
@@ -129,5 +129,10 @@ Player *Player::getVotesFor() const
 void Player::setVotesFor(Player *value)
 {
     votesFor = value;
+}
+
+void Player::setJailed(bool value)
+{
+    jailed = value;
 }
 

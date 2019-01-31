@@ -9,11 +9,10 @@ public:
     Shaman();
 
     void enchant(Player *playerID); //function is being called during daytime
-
-    void setCanEnchant(bool value);
+    Player *getEnchants() const;
 
 private:
-    bool canEnchant;
+    Player *enchants;
 };
 
 #endif // SHAMAN_H

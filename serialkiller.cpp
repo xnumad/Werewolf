@@ -8,7 +8,11 @@ void SerialKiller::kill(Player *playerID) //same method as deathPotion in use() 
 {
     if (myGame.getDaytime() == Game::night && validAction(playerID))
     {
-        //check if protected first?
-        playerID->die(other);
+        kills = playerID;
     }
+}
+
+Player *SerialKiller::getKills() const
+{
+    return kills;
 }

@@ -18,3 +18,8 @@ void Priest::holyWater(Player *playerID)
         }
     }
 }
+
+void Priest::setWater(bool value)
+{
+    water = value;
+}

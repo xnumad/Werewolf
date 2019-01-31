@@ -63,6 +63,8 @@ public:
     Player *getVotesFor() const;
     void setVotesFor(Player *value);
 
+    void setJailed(bool value);
+
 private:
     bool alive;
     bool sectMember;

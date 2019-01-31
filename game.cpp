@@ -12,18 +12,30 @@ Game::Game()
 void Game::dayBegin()
 {
     daytime = day;
-    //foreach Player votesFor = 0 && jailed = false
+    //foreach Player votesFor = 0 && jailed = false && enchanted = false
     //foreach(Player *player in Player)
-    //set canAdd = true for all sectLeaders
-
+    //set canShoot = true for all gunners
     //set canEnchant = true for all shamans
-    //reset all enchantments of all previously enchanted players
+    //if (sectLeader->alive) {sectLeader->getAdds()->setSectMember(true);}
+    //if (serialKiller->alive) {
+    ////check if protected first
+    //serialKiller->getKills()->die(other)} //Kill option
+    if (witch->alive) {
+        switch (witch->getCurrentPotion()) {
+        case deathPotion:
+        }
+    witch->getTarget()->die(other);
+    }
 }
 
 void Game::nightbegin() //will be executed from first night and on
 {
     daytime = night;
     //foreach Player votesFor = 0
+    //set canKill = true for all serialKillers
+    //set canCheck = true for all seers
+    //if (shaman->alive) {shaman->getEnchants()->setEnchanted(true);}
+    //create seperate chat instance between jailer and jailer->getProtects(), give jailer ability to kill imprisoned person //Kill option
     nightCount++; //first night will be 1 if integer initialized with value 0 -> no interferences with blocking witch from using death potion during the first night
 }
 
@@ -90,5 +102,5 @@ int Game::getGunnerShots() const
 
 void Game::setup()
 {
-//    foreach (*Player, Rplayer) {
+    //foreach (*Player, Rplayer) {
 }

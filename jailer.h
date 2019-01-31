@@ -9,10 +9,10 @@ public:
     Jailer();
     void jail(Player *playerID);
 
-    void setCanJail(bool value);
+    Player *getJails() const;
 
 private:
-    bool canJail;
+    Player *jails;
 };
 
 #endif // JAILER_H

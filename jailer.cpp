@@ -6,15 +6,13 @@ Jailer::Jailer()
 
 void Jailer::jail(Player *playerID)
 {
-    if (myGame.getDaytime() == Game::night && validAction(playerID) && canJail)
+    if (myGame.getDaytime() == Game::day && validAction(playerID))
     {
-      //create new chat instance for jailer and imprisoned person
-      //give jailer ability to kill imprisoned person //Kill option
-      canJail = false;
+        jails = playerID;
     }
 }
 
-void Jailer::setCanJail(bool value)
+Player *Jailer::getJails() const
 {
-    canJail = value;
+    return jails;
 }

@@ -10,8 +10,11 @@ public:
 
     void shoot(Player *playerID);
 
+    void setCanShoot(bool value);
+
 private:
     int shots; //shots left
+    bool canShoot;
 };
 
 #endif // GUNNER_H

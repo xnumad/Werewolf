@@ -7,17 +7,14 @@ Witch::Witch()
 
 void Witch::use(enum potion potion, Player *playerID)
 {
-    if (myGame.getDaytime() == Game::night && validAction(playerID) && potionAvailable[potion])
+    if (myGame.getDaytime() == Game::night && validAction(playerID) && potionAvailable[potion] && myGame.getNightCount() > 1) //using potions in the first night is prohibited
     {
-        //check if protected first?
+        currentPotion = potion;
+        target = playerID;
         switch (potion)
         {
         case deathPotion:
-            if (myGame.getNightCount() > 1) //deathPotion cannot be used at first night
-            {
-                playerID->die(other); //same method as kill() of SerialKiller
-                potionAvailable[potion] = false;
-            }
+            potionAvailable[potion] = false;
             break;
         case shieldPotion:
             //set protect value, like bodyguard shield only destroyed if player was attacked
@@ -25,4 +22,14 @@ void Witch::use(enum potion potion, Player *playerID)
             break;
         }
     }
+}
+
+Player *Witch::getTarget() const
+{
+    return target;
+}
+
+Witch::potion Witch::getCurrentPotion() const
+{
+    return currentPotion;
 }
