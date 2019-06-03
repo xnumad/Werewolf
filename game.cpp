@@ -33,7 +33,7 @@ void Game::dayBegin()
     //}
 }
 
-void Game::nightbegin() //will be executed from first night and on
+void Game::nightbegin() //will be executed from first night and onwards
 {
     daytime = night;
     //foreach Player votesFor = 0
