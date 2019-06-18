@@ -53,6 +53,7 @@ void Game::setDayDiscussionTime(int value)
 {
     dayDiscussionTime = value;
 }
+
 int Game::getDayVotingTime() const
 {
     return dayVotingTime;
@@ -62,6 +63,7 @@ void Game::setDayVotingTime(int value)
 {
     dayVotingTime = value;
 }
+
 int Game::getNightTime() const
 {
     return nightTime;
@@ -71,6 +73,7 @@ void Game::setNightTime(int value)
 {
     nightTime = value;
 }
+
 int Game::getNightCount() const
 {
     return nightCount;
@@ -80,6 +83,7 @@ void Game::setNightCount(int value)
 {
     nightCount = value;
 }
+
 bool Game::getRevealRolesAfterDeath() const
 {
     return revealRolesAfterDeath;
